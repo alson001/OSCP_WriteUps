@@ -1,0 +1,6 @@
+# Obsidian vault config
+.obsidian/
+
+# Obsidian trash / workspace
+.trash/
+*.tmp
