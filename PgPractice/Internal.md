@@ -47,7 +47,7 @@ command not found: gedompwinfo
 
 port 49152,49153,49154,49155,49156,49157,49158 - I don't know what these are
 
-port 5537 - wsdapi
+port 5357 - wsdapi
 
 Googling this port.
 ```
