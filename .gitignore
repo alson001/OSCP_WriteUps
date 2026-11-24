@@ -4,3 +4,6 @@
 # Obsidian trash / workspace
 .trash/
 *.tmp
+
+# Template files
+Template.md
