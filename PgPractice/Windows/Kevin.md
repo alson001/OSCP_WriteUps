@@ -14,7 +14,7 @@ PORT      STATE SERVICE      REASON          VERSION
 49160/tcp open  unknown      syn-ack ttl 125
 ```
 
-port 135/445 (smb) - tried listing shares anonymously and user enum4linux to list users but nothing.
+port 139/445 (smb) - tried listing shares anonymously and user enum4linux to list users but nothing.
 
 port 80 (web) - Launch webpage
 `admin:admin` works as default credentials.
